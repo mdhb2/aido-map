@@ -82,6 +82,8 @@ files:
 why: One-line reason this map should be chosen.
 ```
 
+Language: All map files and `.aido` documentation MUST be written in English. Use concise, factual English for `Description` and `why` fields so AI agents and reviewers can parse reliably.
+
 ## Quick execution checklist
 
 1. Read `.aido/AI_CONTEXT.md`.
