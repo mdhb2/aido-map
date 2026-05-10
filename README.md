@@ -68,6 +68,54 @@ Notes:
 
 After changes, skill updates `.aido/recent-changes.md` and only relevant maps.
 
+## How to use this skill (examples)
+
+Example 1 — Ask for plan without changing code:
+
+User prompt:
+```
+Please design GET /users/summary endpoint. Use repo index first and list which files you will open.
+```
+
+What skill does:
+- Reads `.aido/AI_CONTEXT.md`.
+- Picks 1-2 maps (e.g., `api.md`).
+- Reads only files listed in chosen map.
+- Outputs: list of files it will open, short implementation plan, and a unified patch diff suggestion.
+
+Example 2 — Ask for fix and patch file:
+
+User prompt:
+```
+There's a failing test in auth refresh tokens. Inspect and provide patch.
+```
+
+What skill does:
+- Reads `.aido/AI_CONTEXT.md`.
+- Picks `auth.md` map.
+- Reads files listed in `auth.md`.
+- Outputs: diagnosis, minimal patch diff, and a recommended `.aido/recent-changes.md` entry.
+
+Example 3 — If `.aido` missing or outdated:
+
+User prompt:
+```
+Add feature X that interacts with database.
+```
+
+What skill does:
+- Detects `.aido` missing/outdated.
+- Runs minimal targeted discovery inside repo to find candidate files (no blind full-repo scan).
+- Creates or updates `.aido/maps` with concrete file lists and writes one-line entries to `.aido/recent-changes.md`.
+- Outputs: discovery summary and suggested map entries for review.
+
+Outputs you will see from the skill:
+- `plan`: short bullet plan of what will change.
+- `files_opened`: list of concrete file paths agent read.
+- `patch`: unified diff patch suggestion (text) for small edits.
+- `aido_updates`: recommended `.aido/recent-changes.md` lines and map edits (if applicable).
+
+
 ## Files included
 
 - `SKILL.md` — skill instructions & trigger description
