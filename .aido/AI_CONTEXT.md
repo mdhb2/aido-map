@@ -12,13 +12,8 @@ How to use:
 4. Avoid full-repo scan unless `.aido` missing/outdated or task unclear.
 
 Map index:
-  - .aido/maps/architecture.md
-  - .aido/maps/auth.md
-  - .aido/maps/api.md
-  - .aido/maps/database.md
-  - .aido/maps/ui.md
-  - .aido/maps/config.md
-  - .aido/maps/testing.md
+  - Only include map files that exist and contain at least one concrete file path for this repository.
+  - Example: .aido/maps/api.md (only if it lists files present in this repo)
 
 Outdated signals:
   - map path no longer exists

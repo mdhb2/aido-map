@@ -1,7 +1,3 @@
 Description: High-level component layout and ownership.
-files:
-  - src/**
-  - app/**
-  - server/**
-  - main.*
-why: Choose for architecture, module-boundary, or cross-cutting tasks.
+files: []
+why: This project may not have standard architecture dirs. Populate `files:` with concrete paths present in this repo only.

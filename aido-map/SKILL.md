@@ -63,13 +63,22 @@ Do not rewrite entire `.aido` set when only one area changed.
 
 ## Map file pattern
 
-Use this structure for each map:
+Maps must list only files that exist in this repository. Do not add assumed paths, directories, or files that are not present.
+
+When creating or editing a map follow these steps:
+
+1. Run a glob search for candidate files inside repo (e.g., `src/**/*.js`).
+2. Include only the concrete matches returned by the glob. If a glob matches nothing, do not add that glob to the map.
+3. Prefer explicit file paths to broad globs. If using a glob, expand it and paste the matched file paths into `files:` so the map contains concrete file names.
+4. If the map would be empty for this project, omit the map file or leave `files:` empty and document why.
+
+Map schema example (must reference existing files):
 
 ```md
 Description: One-line area summary.
 files:
-  - path/to/file.ext
-  - path/to/dir/*.ext
+  - src/api/users.js
+  - src/models/user.js
 why: One-line reason this map should be chosen.
 ```
 
