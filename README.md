@@ -163,3 +163,19 @@ cd ~/.agents/skills/aido-map && git pull origin main
 Notes:
 - When updating, prefer replacing files in-place rather than creating duplicate skill folders.
 - After update, restart OpenCode agent process or reload skill cache so new SKILL.md is picked up.
+
+Update using npx skills (one-liner)
+
+If your environment provides the `skills` CLI via npx, you can update or install the latest skill with a single command. This is idempotent: running the command again will fetch the latest release and replace the installed files.
+
+```bash
+npx skills add https://github.com/mdhb2/aido-map --skill aido-map -a opencode
+```
+
+If your `skills` CLI supports an explicit update command, you can use that instead:
+
+```bash
+npx skills update https://github.com/mdhb2/aido-map --skill aido-map -a opencode
+```
+
+Note: when installed via git clone, update with `git pull origin main` inside the skill folder instead.
