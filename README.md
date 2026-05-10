@@ -47,6 +47,18 @@ mkdir -p .agents/skills
 git clone https://github.com/mdhb2/aido-map.git .agents/skills/aido-map
 ```
 
+Install using npx (one-liner)
+
+If your environment supports the `skills` CLI via npx, install the skill in one command. This fetches the repo and installs the skill for OpenCode (or compatible agent platforms):
+
+```bash
+npx skills add https://github.com/mdhb2/aido-map --skill aido-map -a opencode
+```
+
+Notes:
+- Replace URL or `--skill` value if you maintain a different fork or skill-name.
+- This command installs latest by default.
+
 ## Usage
 
 - Skill reads `.aido/AI_CONTEXT.md` first.
