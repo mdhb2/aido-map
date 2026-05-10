@@ -67,3 +67,39 @@ After changes, skill updates `.aido/recent-changes.md` and only relevant maps.
 
 - Skill not visible: ensure files under `~/.agents/skills/aido-map` or `%USERPROFILE%\.agents\skills\aido-map` and restart agent.
 - Private repo releases: use `gh release download --repo mdhb2/aido-map --latest --pattern "aido-map.skill"` with auth.
+
+## Update to latest
+
+Keep skill installation up-to-date by downloading latest release and replacing installed files.
+
+Windows PowerShell:
+
+```powershell
+# download latest release asset
+curl -L -o aido-map.skill "https://github.com/mdhb2/aido-map/releases/latest/download/aido-map.skill"
+# extract over existing installation
+Expand-Archive -LiteralPath aido-map.skill -DestinationPath "$env:USERPROFILE\.agents\skills\aido-map" -Force
+# restart agent or reload skills as required by your platform
+```
+
+macOS / Linux (bash):
+
+```bash
+# download latest release asset
+curl -L -o aido-map.skill "https://github.com/mdhb2/aido-map/releases/latest/download/aido-map.skill"
+unzip -o aido-map.skill -d ~/.agents/skills/aido-map
+# restart agent or reload skills as required by your platform
+```
+
+GitHub CLI (authenticated):
+
+```bash
+gh release download --repo mdhb2/aido-map --latest --pattern "aido-map.skill"
+unzip -o aido-map.skill -d ~/.agents/skills/aido-map
+# or if installed via git clone
+cd ~/.agents/skills/aido-map && git pull origin main
+```
+
+Notes:
+- When updating, prefer replacing files in-place rather than creating duplicate skill folders.
+- After update, restart OpenCode agent process or reload skill cache so new SKILL.md is picked up.
