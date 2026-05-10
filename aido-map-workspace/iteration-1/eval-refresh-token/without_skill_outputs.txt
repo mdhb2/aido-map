@@ -1,0 +1,18 @@
+Baseline outputs for eval 2 (no skill):
+
+- Agent scanned repo: src/, auth/, config/
+- Files read: src/auth/token.js, src/auth/refresh.js, src/lib/session.js, src/utils/time.js, config/auth.yaml
+- Diagnosis: identified expiry comparison mismatch and potential timezone bug.
+- Plan: update refresh logic and add tests.
+- No .aido updates.
+
+Patch: (not applied to repo) diff below
+--- a/src/auth/refresh.js
++++ b/src/auth/refresh.js
+@@
+- if (token.expires_at < Date.now()) {
+-  // expired
+- }
++if (token.expires_at * 1000 < Date.now()) {
++  // expired
++}

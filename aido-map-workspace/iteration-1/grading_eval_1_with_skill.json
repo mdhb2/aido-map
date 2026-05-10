@@ -1,0 +1,8 @@
+{
+  "expectations": [
+    {"text": "AI_CONTEXT.md read before any source files", "passed": true, "evidence": "with_skill_outputs.txt shows AI_CONTEXT.md read"},
+    {"text": "No more than 2 maps selected", "passed": true, "evidence": "selected 2 maps: api.md, database.md"},
+    {"text": "Only source files listed in selected maps are read", "passed": true, "evidence": "files read match api and database map entries"},
+    {"text": "Patch edits limited to files from maps", "passed": true, "evidence": "planned edits only touch src/api and src/models"}
+  ]
+}

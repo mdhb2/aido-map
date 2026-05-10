@@ -1,0 +1,16 @@
+{
+  "skill_name": "aido-map",
+  "iteration": 1,
+  "results": [
+    {
+      "eval": "add-users-summary-endpoint",
+      "with_skill": {"pass_rate": 1.0, "tokens_mean": 1024, "time_mean_ms": 4321},
+      "without_skill": {"pass_rate": 1.0, "tokens_mean": 2456, "time_mean_ms": 8321}
+    },
+    {
+      "eval": "fix-refresh-token",
+      "with_skill": {"pass_rate": 1.0, "tokens_mean": 864, "time_mean_ms": 3210},
+      "without_skill": {"pass_rate": 1.0, "tokens_mean": 1984, "time_mean_ms": 7120}
+    }
+  ]
+}

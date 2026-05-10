@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "fix-refresh-token",
+  "prompt": "Fix refresh token expiry bug in auth flow — list files to inspect and short plan to fix.",
+  "assertions": [
+    {"id": "B1", "description": "AI_CONTEXT.md read first"},
+    {"id": "B2", "description": "Auth map selected"},
+    {"id": "B3", "description": "Files inspected limited to auth map"},
+    {"id": "B4", "description": "Suggest update to .aido/recent-changes.md after fix"}
+  ]
+}

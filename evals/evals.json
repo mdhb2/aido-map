@@ -1,0 +1,17 @@
+{
+  "skill_name": "aido-map",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add GET /users/summary endpoint that returns user counts and active rates. Explain which files you'll edit and produce a patch.",
+      "expected_output": "List of files to edit (limited to files in selected maps) and a unified patch file.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Fix refresh token expiry bug in auth flow — list files to inspect and short plan to fix.",
+      "expected_output": "Files inspected limited to auth map, short plan, and patch suggestion.",
+      "files": []
+    }
+  ]
+}

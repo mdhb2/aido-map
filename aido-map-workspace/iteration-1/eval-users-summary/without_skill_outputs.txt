@@ -1,0 +1,17 @@
+Baseline outputs for eval 1 (no skill):
+
+- Agent scanned repo: src/, app/, server/, tests/
+- Files read: src/api/users.js, src/api/index.js, src/models/user.js, src/lib/db.js, src/utils/date.js, src/config/*.js
+- Planned edits:
+  - src/api/users.js: add route handler GET /users/summary
+  - src/models/user.js: add summary query method
+- No .aido updates.
+
+Patch: (not applied to repo) diff below
+--- a/src/api/users.js
++++ b/src/api/users.js
+@@
++router.get('/summary', async (req, res) => {
++  const summary = await User.summaryCounts();
++  res.json(summary);
++});

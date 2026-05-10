@@ -1,0 +1,20 @@
+Outputs for eval 2 with skill:
+
+- AI_CONTEXT.md read: .aido/AI_CONTEXT.md
+- Selected map: .aido/maps/auth.md
+- Files read: src/auth/token.js, src/auth/refresh.js, config/auth.yaml
+- Diagnosis: refresh token expiry check uses Date.now() without timezone normalization; tokens compared to expiration in seconds instead of ms.
+- Plan: update refresh logic to normalize timestamps and add unit test.
+- Updated .aido/recent-changes.md:
+  - 2026-05-10 | auth | src/auth/refresh.js | fix refresh token expiry check
+
+Patch: (not applied to repo) diff below
+--- a/src/auth/refresh.js
++++ b/src/auth/refresh.js
+@@
+- if (token.expires_at < Date.now()) {
+-  // expired
+- }
++if (token.expires_at * 1000 < Date.now()) {
++  // expired
++}

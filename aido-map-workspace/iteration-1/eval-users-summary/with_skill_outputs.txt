@@ -1,0 +1,19 @@
+Outputs for eval 1 with skill:
+
+- AI_CONTEXT.md read: .aido/AI_CONTEXT.md
+- Selected maps: .aido/maps/api.md, .aido/maps/database.md
+- Files read (expanded globs): src/api/users.js, src/api/index.js, src/models/user.js
+- Planned edits:
+  - src/api/users.js: add route handler GET /users/summary
+  - src/models/user.js: add summary query method
+- Updated .aido/recent-changes.md:
+  - 2026-05-10 | api | src/api/users.js | add users summary endpoint
+
+Patch: (not applied to repo) diff below
+--- a/src/api/users.js
++++ b/src/api/users.js
+@@
++router.get('/summary', async (req, res) => {
++  const summary = await User.summaryCounts();
++  res.json(summary);
++});

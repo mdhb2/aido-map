@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "add-users-summary-endpoint",
+  "prompt": "Add GET /users/summary endpoint that returns user counts and active rates. Explain which files you'll edit and produce a patch.",
+  "assertions": [
+    {"id": "A1", "description": "AI_CONTEXT.md read before any source files"},
+    {"id": "A2", "description": "No more than 2 maps selected"},
+    {"id": "A3", "description": "Only source files listed in selected maps are read"},
+    {"id": "A4", "description": "Patch edits limited to files from maps"}
+  ]
+}

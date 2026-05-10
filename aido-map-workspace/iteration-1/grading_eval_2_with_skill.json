@@ -1,0 +1,8 @@
+{
+  "expectations": [
+    {"text": "AI_CONTEXT.md read first", "passed": true, "evidence": "with_skill_outputs.txt shows AI_CONTEXT.md read"},
+    {"text": "Auth map selected", "passed": true, "evidence": "selected map: auth.md"},
+    {"text": "Files inspected limited to auth map", "passed": true, "evidence": "files read match auth map list"},
+    {"text": "Suggest update to .aido/recent-changes.md after fix", "passed": true, "evidence": "recent-changes update suggested in outputs"}
+  ]
+}
